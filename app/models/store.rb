@@ -3,7 +3,7 @@ class Store < ActiveRecord::Base
 
   def download
     GithubStore.load.each do |commit_params|
-      commits << Commit.new(commit_params)
+      commits << Commit.build(commit_params)
     end
   end
 

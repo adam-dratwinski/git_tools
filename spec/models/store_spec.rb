@@ -3,9 +3,9 @@ require "spec_helper"
 describe Store do
   subject { Store.new }
 
-  let(:commit_params) { { } }  
+  let(:commit_struct) { OpenStruct.new }  
 
-  before { GithubStore.stub(:load => [commit_params]) }
+  before { GithubStore.stub(:load => [commit_struct]) }
 
   describe ".download" do
     it "should have one commit" do
@@ -13,8 +13,8 @@ describe Store do
       subject.commits.should have(1).commit
     end
 
-    it "should pass params when initialize a commit" do
-      Commit.should_receive(:new).with(commit_params)
+    it "should pass struct when initialize a commit" do
+      Commit.should_receive(:build).with(commit_struct)
       subject.download
     end
   end

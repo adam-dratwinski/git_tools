@@ -1,7 +1,7 @@
 Cuba.define do
   on get do
     on root do
-      res.write render("#{APP_PATH}/app/views/index.html.haml", content: "hello, world")
+      res.write CommitsController.index(self)
     end
   end
 end
