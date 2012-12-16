@@ -10,6 +10,7 @@ Cuba.plugin Cuba::Render
 
 require_relative "config/initialize"
 require_relative "app/models/commit"
+require_relative "app/models/merge_commit"
 require_relative "app/models/store"
 require_relative "app/models/author"
 require_relative "app/models/github_store"

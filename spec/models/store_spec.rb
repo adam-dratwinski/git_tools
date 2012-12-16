@@ -14,7 +14,7 @@ describe Store do
     end
 
     it "should pass struct when initialize a commit" do
-      Commit.should_receive(:build).with(commit_struct)
+      Commit.should_receive(:factory).with(commit_struct)
       subject.download
     end
   end

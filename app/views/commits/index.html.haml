@@ -17,7 +17,8 @@
           - store.commits.each do |commit|
             %li
               %strong [0]
-              %a{href: "https://www.pivotaltracker.com/story/show/"}
+              - if commit.story_id.present?
+                %a{href: "https://www.pivotaltracker.com/story/show/#{commit.story_id}"} [##{commit.story_id}]
               #{commit.message}
               (#{commit.author.email})
               
