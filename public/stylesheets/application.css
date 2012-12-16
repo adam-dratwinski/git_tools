@@ -1,0 +1,65 @@
+body {
+  font-family: Verdana;
+  background-color: #FFF;
+  font-size: 14px;
+  color: #3c3c3c;
+}
+
+#container {
+  background-color: #f5f5f5;
+  width: 75%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  padding-top: 0;
+  border: solid 1px #aaa;
+  margin-top: 40px;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow:0 0 5px rgba(0,0,0,0.3)
+}
+
+a { color: #DD4B39; }
+
+h2 {
+  margin: 10px 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style:none; 
+}
+
+ul ul {
+  margin: 10px 
+}
+
+.commits li {
+  list-style:none;
+  border: 1px solid #bbb;
+  padding: 5px;
+  margin: 0;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  background: #999; /* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ddd'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#ddd)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #f5f5f5,  #ddd); /* for firefox 3.6+ */ 
+
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow:0 0 5px rgba(0,0,0,0.3)
+}
+
+.commits li {
+  margin: 5px 0;
+}
+
+.commits li li {
+  background: #f5f5f5;
+}
+
+.commits li strong {
+  color: #555;
+}

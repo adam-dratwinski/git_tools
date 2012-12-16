@@ -27,13 +27,13 @@ GEM
       multi_json (~> 1.4)
       nokogiri (~> 1.5.2)
       oauth2
+    haml (3.1.7)
     hashie (1.2.0)
     httpauth (0.2.0)
     i18n (0.6.1)
     jwt (0.1.5)
       multi_json (>= 1.0)
     method_source (0.8.1)
-    minitest (4.3.3)
     multi_json (1.5.0)
     multipart-post (1.1.5)
     nokogiri (1.5.5)
@@ -61,6 +61,7 @@ GEM
     rspec-mocks (2.12.0)
     slop (3.3.3)
     sqlite3 (1.3.6)
+    tilt (1.3.3)
     tzinfo (0.3.35)
 
 PLATFORMS
@@ -70,10 +71,11 @@ DEPENDENCIES
   activerecord
   cuba
   github_api
-  minitest
+  haml
   pry
   rack
   rack-protection
   rake
   rspec
   sqlite3
+  tilt
