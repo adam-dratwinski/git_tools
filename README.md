@@ -1,4 +1,4 @@
-INSTALATION
+INSTALLATION
 ===========
 
 ## Copy config file 
@@ -13,7 +13,7 @@ INSTALATION
 
 `bundle`
 
-## Migrate the database
+## Migrate database
 
 `ruby ./install.rb`
 
