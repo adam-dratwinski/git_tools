@@ -13,14 +13,18 @@
       .header
         %h2
           Comparing #{branch_a} to #{branch_b}
-          %ul.commits
-            - store.commits.each do |commit|
-              %li
-                = commit.message
-                -# = commit.short_message
-                -# - if commit.children.count > 1
-                -#   %a.expand{:href => "#"} [+/-]
-                -#   %ul
-                -#     - commit.children.each do |commit|
-                -#       %li
-                -#         = commit.short_message
+        %ul.commits
+          - store.commits.each do |commit|
+            %li
+              %strong [0]
+              %a{href: "https://www.pivotaltracker.com/story/show/"}
+              #{commit.message}
+              (#{commit.author.email})
+              
+              -# = commit.short_message
+              -# - if commit.children.count > 1
+              -#   %a.expand{:href => "#"} [+/-]
+              -#   %ul
+              -#     - commit.children.each do |commit|
+              -#       %li
+              -#         = commit.short_message
