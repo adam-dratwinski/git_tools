@@ -34,4 +34,8 @@ describe MergeCommit do
     commit = MergeCommit.build(struct)
     commit.message.should == "Merge branch rocket-scientist/remove-shoulda-40420100"
   end
+
+  it "should be a merge" do
+    MergeCommit.new.merge?.should be_true
+  end
 end

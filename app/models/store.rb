@@ -11,7 +11,16 @@ class Store < ActiveRecord::Base
     @data ||= []
   end
 
-  def commits_by_story_id
+  def grouped_commits
+    grouped_commits = commits.clone
 
+    grouped_commits.select(&:merge?).each do |merge_commit|
+      grouped_commits.reject(&:merge?).select do |commit|
+        merge_commit.story_id == commit.story_id
+      end.each do |commit|
+        merge_commit.children << grouped_commits.delete(commit)
+      end
+    end
+    grouped_commits
   end
 end

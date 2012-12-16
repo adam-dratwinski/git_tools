@@ -14,9 +14,9 @@
         %h2
           Comparing #{branch_a} to #{branch_b}
         %ul.commits
-          - store.commits.each do |commit|
+          - store.grouped_commits.each do |commit|
             %li
-              %strong [0]
+              %strong [#{commit.children.count}]
               - if commit.story_id.present?
                 %a{href: "https://www.pivotaltracker.com/story/show/#{commit.story_id}"} [##{commit.story_id}]
               #{commit.message}

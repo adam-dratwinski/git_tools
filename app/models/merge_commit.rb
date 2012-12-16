@@ -2,7 +2,7 @@ class MergeCommit < Commit
   ID_PATTERN = /[-\/](\d{8,10})/
 
   def merge?
-    false
+    true
   end
 
   private
@@ -12,7 +12,7 @@ class MergeCommit < Commit
   end
 
   def get_message_from_message(message)
-    branch_name = message.split(" ").last
+    branch_name = message.to_s.split(" ").last
     message = "Merge branch #{branch_name}"
     message[0,80] + (message.length > 80 ? "..." : "")
   end
