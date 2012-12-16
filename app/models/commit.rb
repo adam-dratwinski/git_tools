@@ -29,7 +29,7 @@ class Commit
   end
 
   def self.merge_message? message
-    ! ((message.to_s =~ /Merge (branch|pull request|remote-tracking)/) == nil)
+    ! ((message.to_s =~ /Merge (pull request|remote-tracking)/) == nil)
   end
 
   private

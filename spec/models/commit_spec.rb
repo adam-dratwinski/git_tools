@@ -25,10 +25,6 @@ describe Commit do
   end
   
   describe ".merge_message?" do
-    it "should be true for merge branch" do
-      Commit.merge_message?("Merge branch 'master' into rocket-science/blah-blah-blah").should be_true
-    end
-
     it "should be true for merge pull request" do
       Commit.merge_message?("Merge pull request #1111 from rocket-science/blah-blah-blah").should be_true
     end
