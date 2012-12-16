@@ -63,3 +63,9 @@ ul ul {
 .commits li strong {
   color: #555;
 }
+
+.commits li img {
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}

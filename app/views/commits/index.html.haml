@@ -20,6 +20,7 @@
               - if commit.story_id.present?
                 %a{href: "https://www.pivotaltracker.com/story/show/#{commit.story_id}"} [##{commit.story_id}]
               #{commit.message}
+              %img{src: commit.author.avatar_url }
               (#{commit.author.email})
               
               -# = commit.short_message
