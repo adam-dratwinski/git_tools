@@ -1,13 +1,25 @@
 require "spec_helper"
 
 describe Commit do
-  it "should have a message" do
-    commit = Commit.new :message => "Lorem ipsum"
-    commit.message.should == "Lorem ipsum"
-  end
+  let(:struct) { OpenStruct.new({
+    :author_avatar_url => "avatar_url",
+    :author_login      => "login",
+    :author_email      => "email",
+    :message           => "message",
+    :date              => "date"
+  }) }
 
-  it "should have a story id" do
-    commit = Commit.new :story_id => 1
-    commit.story_id.should == 1
+  subject { @commit = Commit.build(struct) }
+
+  its(:message) { should == "message" }
+  its(:story_id) { should == nil }
+  its(:date) { should == "date" }
+
+  describe ".author" do
+    subject { @commit = Commit.build(struct).author }
+
+    its(:login) { should == "login" }
+    its(:email) { should == "email" }
+    its(:avatar_url) { should == "avatar_url" }
   end
 end

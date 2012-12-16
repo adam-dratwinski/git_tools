@@ -1,6 +1,7 @@
 !!!
 - @branch_a = "production"
-- @branch_b = "master"
+- @store = Store.new
+- @store.download
 %html
   %head
     %meta{:charset => "utf-8"}/
@@ -15,13 +16,14 @@
       .header
         %h2
           Comparing #{@branch_a} to #{@branch_b}
-      -# %ul.commits
-      -#   - GitHubClient.instance.all(@branch_a, @branch_b).each do |commit|
-      -#     %li
-      -#       = commit.short_message
-      -#       - if commit.children.count > 1
-      -#         %a.expand{:href => "#"} [+/-]
-      -#         %ul
-      -#           - commit.children.each do |commit|
-      -#             %li
-      -#               = commit.short_message
+          %ul.commits
+            - @store.commits.each do |commit|
+              %li
+                = commit.message
+                -# = commit.short_message
+                -# - if commit.children.count > 1
+                -#   %a.expand{:href => "#"} [+/-]
+                -#   %ul
+                -#     - commit.children.each do |commit|
+                -#       %li
+                -#         = commit.short_message
