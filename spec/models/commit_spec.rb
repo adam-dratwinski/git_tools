@@ -45,8 +45,9 @@ describe Commit do
   end
 
   it "should build normal commit" do
-    Commit.stub(:merge_message? => true)
+    Commit.stub(:merge_message? => false)
     Commit.should_receive(:new)
+    MergeCommit.should_not_receive(:new)
     Commit.factory(struct)
   end
 end
